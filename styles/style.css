@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+#middleForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 30vh;
+}
+
+#inputSearch {
+  padding: 20px 100px 20px 30px;
+  width: 55vw;
+  height: 40px;
+  max-width: 550px;
+  border-radius: 20px;
+  color: #333;
+  box-shadow: 0px 0px 20px #0003;
+  border: none;
+  font-size: large;
+  border: 0px solid #fff0;
+  transition: all .2s ease-in-out;
+  font-family: roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+#inputSearch:focus-visible {
+  border: 1px solid #340095;
+  animation: rotateGradient 5s linear infinite alternate, colorChange 5s linear infinite alternate;
+}
+
+#inputSearch::placeholder {
+  color: #959499;
+}
+
+#formSearch {
+  position: relative;
+}
+
+#formSearch label {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  padding: 18px;
+  border-radius: 18px;
+  background: #0000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+}
+
+#formSearch label:hover {
+  background: rgba(0, 0, 0, 0.101);
+}
+
+#menuApps {
+  background: #B4C3FB;
+  position: fixed;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 9px;
+  bottom: 20px;
+  right: 20px;
+  padding: 25px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+#menuApps:hover {
+  box-shadow: 0px 0px 20px #0003;
+}
+
+#menuApps::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.menuItem {
+  background: #222;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuItem svg {
+  opacity: 0;
+}
+
+#menuApps,
+.menuItem,
+.menuItem svg {
+  transition: all .5s cubic-bezier(0.74, -0.22, 0.36, 1.22);
+}
+
+#menuApps.open {
+  gap: 30px;
+  cursor: unset;
+  box-shadow: 0px 0px 20px #0003;
+}
+
+#menuApps.open::before {
+  display: none;
+}
+
+.menuItem.open {
+  width: 60px;
+  height: 60px;
+  background: white;
+  cursor: pointer;
+}
+
+.menuItem.open:hover {
+  transform: scale(1.05);
+}
+
+.menuItem.open svg {
+  opacity: 1;
+}
+
+#climaFrame {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: calc(410px - 30px*2);
+  height: calc(120px - 30px*2);
+  background: #76B9F6;
+  border-radius: 30px;
+  padding: 30px;
+  font-family: roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+#climaFrame h1 {
+  color: #fff;
+}
+
+@keyframes rotateGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 50% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    border-color: #340095;
+  }
+
+  5% {
+    border-color: #2a0087;
+  }
+
+  10% {
+    border-color: #1f007a;
+  }
+
+  15% {
+    border-color: #14006d;
+  }
+
+  20% {
+    border-color: #090061;
+  }
+
+  25% {
+    border-color: #000055;
+  }
+
+  30% {
+    border-color: #00095f;
+  }
+
+  35% {
+    border-color: #00106b;
+  }
+
+  40% {
+    border-color: #001778;
+  }
+
+  45% {
+    border-color: #001e84;
+  }
+
+  50% {
+    border-color: #00258f;
+  }
+
+  55% {
+    border-color: #002d9b;
+  }
+
+  60% {
+    border-color: #0035a7;
+  }
+
+  65% {
+    border-color: #003cb2;
+  }
+
+  70% {
+    border-color: #0044be;
+  }
+
+  75% {
+    border-color: #004bc9;
+  }
+
+  80% {
+    border-color: #0053d5;
+  }
+
+  85% {
+    border-color: #005adc;
+  }
+
+  90% {
+    border-color: #0061e3;
+  }
+
+  95% {
+    border-color: #0069e9;
+  }
+
+  100% {
+    border-color: #0070f0;
+  }
+}
