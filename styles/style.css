@@ -71,7 +71,7 @@ body {
 }
 
 #menuApps {
-  background: #B4C3FB;
+  background: #3F566C;
   position: fixed;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -98,7 +98,7 @@ body {
 }
 
 .menuItem {
-  background: #222;
+  background: #fffd;
   width: 10px;
   height: 10px;
   border-radius: 100%;
@@ -147,17 +147,60 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  top: 20px;
+  right: 20px;
+  box-shadow: 0px 0px 50px #0002;
   gap: 40px;
-  width: calc(410px - 30px*2);
-  height: calc(120px - 30px*2);
-  background: #76B9F6;
+  width: calc(450px - 30px*2);
+  min-height: calc(120px - 30px*2);
+  background: #3F566C;
   border-radius: 30px;
   padding: 30px;
+  transition: all 2s cubic-bezier(0.88, 0, 0.17, 1);
+  animation: aniFrameClima 1.3s cubic-bezier(0.88, 0, 0.17, 1);
   font-family: roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
-#climaFrame h1 {
+#detalhes {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+#detalhes p{
+  animation: aniItemClima 2s cubic-bezier(0.88, 0, 0.17, 1);
+  transition: all .5s;
+}
+
+#climaFrame h1{
   color: #fff;
+  font-size: 20px;
+}
+
+#detalhes p {
+  color: #fffd;
+}
+
+@keyframes aniFrameClima{
+  0%{
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes aniItemClima{
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes rotateGradient {
