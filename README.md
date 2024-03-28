@@ -1,6 +1,6 @@
 # 🏠 Bem-vindo ao IntelligentHomePage: Sua Página Inicial Personalizada!
 
-🚀 Aqui, estou criando uma página inicial intuitiva e personalizável para usuários de navegadores. Meu objetivo é oferecer uma experiência moderna e funcional para atender às necessidades diárias dos usuários.
+🚀 Aqui, estou criando uma página inicial intuitiva e personalizável para usuários de navegadores. Meu objetivo é oferecer uma experiência moderna, leve e funcional para atender às necessidades diárias dos usuários.
 
 ✨ Imagine uma página inicial que não apenas recebe você com um design limpo e atraente, mas também fornece informações úteis de imediato. Com a integração da previsão do tempo ☀️, você pode ficar atualizado com as condições climáticas locais sem precisar sair da página. Além disso, facilito a pesquisa na web 🌐 incorporando uma barra de busca do Google diretamente na página inicial, para que você possa encontrar o que precisa com rapidez e facilidade.
 
