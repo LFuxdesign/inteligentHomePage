@@ -253,7 +253,7 @@ function principalInfo() {
             priority = 1
             break;
         case "mid":
-            infochuva = "Chuva na sua região, considere levar um guarda chuva"
+            infochuva = "Chuva na sua região, se for sair, considere levar um guarda chuva!"
             priority = 1
             break;
         case "low":
