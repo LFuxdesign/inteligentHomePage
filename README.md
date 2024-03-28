@@ -1,4 +1,4 @@
-🏠 Bem-vindo ao IntelligentHomePage: Sua Página Inicial Personalizada!
+# 🏠 Bem-vindo ao IntelligentHomePage: Sua Página Inicial Personalizada!
 
 🚀 Aqui, estou criando uma página inicial intuitiva e personalizável para usuários de navegadores. Meu objetivo é oferecer uma experiência moderna e funcional para atender às necessidades diárias dos usuários.
 
@@ -8,5 +8,6 @@
 
 🌙 Além disso, entendo que a preferência de tema pode variar de acordo com a preferência pessoal e as condições de iluminação. É por isso que implemento a funcionalidade de alternância de tema entre claro e escuro, para garantir que sua experiência seja confortável em qualquer ambiente.
 
-🤖 Próximos Passos:
+## 🤖 Próximos Passos:
+
 Fique atento para atualizações futuras! Estamos planejando a integração com serviços de IA para tornar sua IntelligentHomePage ainda mais inteligente e personalizada. Novos recursos e melhorias estão a caminho para proporcionar uma experiência única na sua página inicial.
