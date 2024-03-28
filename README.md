@@ -8,6 +8,9 @@
 
 🌙 Além disso, entendo que a preferência de tema pode variar de acordo com a preferência pessoal e as condições de iluminação. É por isso que implemento a funcionalidade de alternância de tema entre claro e escuro, para garantir que sua experiência seja confortável em qualquer ambiente.
 
+## 💻 Frameworks e APIs Utilizadas:
+API de Clima do OpenWeatherMap: Integramos a API de Clima do OpenWeatherMap para fornecer informações precisas e atualizadas sobre as condições climáticas locais diretamente na sua página inicial.
+
 ## 🤖 Próximos Passos:
 
 Fique atento para atualizações futuras! Estamos planejando a integração com serviços de IA para tornar sua IntelligentHomePage ainda mais inteligente e personalizada. Novos recursos e melhorias estão a caminho para proporcionar uma experiência única na sua página inicial.
