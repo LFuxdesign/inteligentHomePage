@@ -267,24 +267,34 @@ function principalInfo() {
     }
     try {
         var numerosDaString = chuva3h.match(/\d+/g);
+        infoChuva3h = numerosDaString.join("");
+        if (Math.floor(infoChuva3h / 10) == null) {
+            infoChuva3h = "Nenhuma chance de chuva nas proximas 3 horas"
+        } else if (Math.floor(infoChuva3h / 10) <= 10) {
+            infoChuva3h = "Pouca chance de chuva nas próximas 3 horas"
+        } else if (Math.floor(infoChuva3h / 10) <= 20) {
+            infoChuva3h = "Leves chances de chuva nas proximas 3 horas"
+        } else if (Math.floor(infoChuva3h / 10) > 20) {
+            infoChuva3h = "Poderá chover nas proximas 3 horas, considere levar um guarda chuva"
+            priority = 2
+        } else if (Math.floor(infoChuva3h / 10) >= 70) {
+            infoChuva3h = "Alta probabilidade de chuva nas proximas 3 horas"
+            priority = 2
+        }
     } catch (error) {
-        var numerosDaString = 0;
-    }
-
-
-    infoChuva3h = numerosDaString.join("");
-    if (Math.floor(infoChuva3h / 10) == null) {
-        infoChuva3h = "Nenhuma chance de chuva nas proximas 3 horas"
-    } else if (Math.floor(infoChuva3h / 10) <= 10) {
-        infoChuva3h = "Pouca chance de chuva nas próximas 3 horas"
-    } else if (Math.floor(infoChuva3h / 10) <= 20) {
-        infoChuva3h = "Leves chances de chuva nas proximas 3 horas"
-    } else if (Math.floor(infoChuva3h / 10) > 20) {
-        infoChuva3h = "Poderá chover nas proximas 3 horas, considere levar um guarda chuva"
-        priority = 2
-    } else if (Math.floor(infoChuva3h / 10) >= 70) {
-        infoChuva3h = "Alta probabilidade de chuva nas proximas 3 horas"
-        priority = 2
+        if (Math.floor(infoChuva3h / 10) == null) {
+            infoChuva3h = "Nenhuma chance de chuva nas proximas 3 horas"
+        } else if (Math.floor(infoChuva3h / 10) <= 10) {
+            infoChuva3h = "Pouca chance de chuva nas próximas 3 horas"
+        } else if (Math.floor(infoChuva3h / 10) <= 20) {
+            infoChuva3h = "Leves chances de chuva nas proximas 3 horas"
+        } else if (Math.floor(infoChuva3h / 10) > 20) {
+            infoChuva3h = "Poderá chover nas proximas 3 horas, considere levar um guarda chuva"
+            priority = 2
+        } else if (Math.floor(infoChuva3h / 10) >= 70) {
+            infoChuva3h = "Alta probabilidade de chuva nas proximas 3 horas"
+            priority = 2
+        }
     }
 
     switch (vento3h()) {
