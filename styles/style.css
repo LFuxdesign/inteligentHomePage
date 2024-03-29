@@ -9,9 +9,9 @@
 body {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   min-width: 100vw;
-  min-height: 100vh;
+  min-height: 600px;
 }
 
 #middleForm {
@@ -21,6 +21,7 @@ body {
   flex-direction: column;
   gap: 50px;
   margin-top: 30vh;
+  z-index: -1;
 }
 
 #inputSearch {
@@ -169,12 +170,12 @@ body {
   flex-direction: column;
 }
 
-#detalhes p{
+#detalhes p {
   animation: aniItemClima 2s cubic-bezier(0.88, 0, 0.17, 1);
   transition: all .5s;
 }
 
-#climaFrame h1{
+#climaFrame h1 {
   color: #fff;
   font-size: 20px;
 }
@@ -183,34 +184,55 @@ body {
   color: #fffd;
 }
 
-@media(width <500px){
-  #climaFrame{
+@media(width <500px) {
+  #climaFrame {
     right: 50%;
     transform: translateX(50%);
     animation: aniFrameClimaMobile 2s cubic-bezier(0.88, 0, 0.17, 1);
   }
 }
 
-@keyframes aniFrameClima{
-  0%{
+@media(width <=900px) {
+  .menuItem {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+@media(height < 400px) {
+  #climaFrame #detalhes {
+    display: none;
+  }
+
+  #climaFrame {
+    height: 80px;
+    width: 80px;
+
+  }
+}
+
+@keyframes aniFrameClima {
+  0% {
     right: 30px;
     transform: translateX(120%);
     opacity: 0;
     transition: none;
   }
-  100%{
+
+  100% {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
-@keyframes aniFrameClimaMobile{
-  0%{
+@keyframes aniFrameClimaMobile {
+  0% {
     right: 30px;
     transform: translateX(120px);
     opacity: 0;
   }
-  100%{
+
+  100% {
     right: 50%;
     transform: translateX(50%);
     opacity: 1;
@@ -218,12 +240,13 @@ body {
 }
 
 
-@keyframes aniItemClima{
+@keyframes aniItemClima {
   0% {
     opacity: 0;
     transform: translateY(-10px);
   }
-  100%{
+
+  100% {
     opacity: 1;
     transform: translate(0);
   }
