@@ -31,7 +31,7 @@ let chuva3h
 let vento3h
 let vento
 let nuvens
-function clima() {
+async function clima() {
     try {
         return new Promise((resolve, reject) => {
             navigator.geolocation.getCurrentPosition((geo) => {
@@ -158,7 +158,9 @@ function clima() {
                                     reject(new Error("Tipo de informação inválida"));
                             }
                         });
-                        setTimeout(() => { principalInfo() }, 500)
+                        setTimeout(() => {
+                            principalInfo();
+                        }, 500);
                     },
                     error: (err) => {
                         console.error("Erro ao obter os dados do clima:", err);
@@ -172,11 +174,10 @@ function clima() {
     }
 
 }
-clima()
-setInterval(() => { clima() }, 3.6e+6)
 
 
-function clima3h() {
+
+async function clima3h() {
     try {
         return new Promise((resolve, reject) => {
             navigator.geolocation.getCurrentPosition((geo) => {
@@ -239,7 +240,7 @@ function clima3h() {
     }
 
 }
-clima3h()
+
 
 
 function principalInfo() {
@@ -330,29 +331,29 @@ function principalInfo() {
     switch (priority) {
         case 1:
             document.querySelectorAll('[auto-switch-clima]').forEach((e) => {
-                e.innerHTML = infos[priority - 1];
+                e.innerHTML = "<span>" + infos[priority - 1] + "</span>";
             })
             break;
         case 2:
             document.querySelectorAll('[auto-switch-clima]').forEach((e) => {
-                e.innerHTML = infos[priority - 1];
+                e.innerHTML = "<span>" + infos[priority - 1] + "</span>";
             })
             break;
         case 3:
             document.querySelectorAll('[auto-switch-clima]').forEach((e) => {
-                e.innerHTML = infos[priority - 1];
+                e.innerHTML = "<span>" + infos[priority - 1] + "</span>";
             })
             break;
         case 4:
             document.querySelectorAll('[auto-switch-clima]').forEach((e) => {
-                e.innerHTML = infos[priority - 1];
+                e.innerHTML = "<span>" + infos[priority - 1] + "</span>";
             })
             break;
         default:
             var indice = Math.floor(Math.random() * infos.length);
 
             document.querySelectorAll('[auto-switch-clima]').forEach((e) => {
-                e.innerHTML = infos[indice];
+                e.innerHTML = "<span>" + infos[indice] + "</span>";
             })
             break;
     }
@@ -360,5 +361,51 @@ function principalInfo() {
 }
 
 setInterval(() => {
-    principalInfo()
+    clima()
+    clima3h()
 }, 600000);
+
+navigator.geolocation.getCurrentPosition(() => {
+    let climaDiv = document.createElement("div")
+    climaDiv.innerHTML = '<div id="climaFrame"><div id="icon"></div><div id="detalhes"><h1><span clima-info="temp"></span> - <span clima-info="descricao"></span></h1><p auto-switch-clima><span> </span></p></div></div>'
+    document.body.appendChild(climaDiv)
+    
+    setTimeout(() => {
+        clima();
+    clima3h();
+        window.matchMedia('(prefers-color-scheme: dark)').matches ? document.querySelector("#climaFrame").style.background = "#dfdfdf" : "";
+    setTimeout(() => {
+        window.matchMedia('(prefers-color-scheme: dark)').matches ? document.querySelector("#climaFrame h1").style.color = "#212529" : "";
+        window.matchMedia('(prefers-color-scheme: dark)').matches ? document.querySelector("#climaFrame p").style.color = "#212529aa" : "";
+    }, 750);
+    }, 1000);
+    
+})
+
+setTimeout(() => {
+
+    let themeCheckbox = document.querySelector("#temaBtn input")
+    themeCheckbox.addEventListener('change', () => {
+        console.log("teste")
+        if (themeCheckbox.checked) {
+            document.querySelector("body").style.background = "#2B2833"
+            document.querySelector("#climaFrame").style.background = "#dfdfdf"
+            setTimeout(() => {
+                document.querySelector("#climaFrame h1").style.color = "#212529"
+                document.querySelector("#climaFrame p").style.color = "#212529aa"
+            }, 750);
+            document.querySelectorAll("#logoSearch path").forEach((e) => { e.style.fill = "#fff" })
+        } else {
+            document.querySelector("body").style.background = "#fff"
+            document.querySelector("#climaFrame").style.background = "#3f566ce0"
+            setTimeout(() => {
+                document.querySelector("#climaFrame h1").style.color = "#fff"
+                document.querySelector("#climaFrame p").style.color = "#fffd"
+            }, 750);
+            document.querySelectorAll("#logoSearch path").forEach((e) => { e.style.fill = "#2B2833" })
+        }
+    })
+    window.matchMedia('(prefers-color-scheme: dark)').matches ? themeCheckbox.checked = true : "";
+    window.matchMedia('(prefers-color-scheme: dark)').matches ? document.querySelector("body").style.background = "#2B2833" : "";
+    window.matchMedia('(prefers-color-scheme: dark)').matches ? document.querySelectorAll("#logoSearch path").forEach((e) => { e.style.fill = "#fff" }) : "";
+}, 1000);
