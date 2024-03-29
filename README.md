@@ -13,4 +13,4 @@ API de Clima do OpenWeatherMap: Integramos a API de Clima do OpenWeatherMap para
 
 ## 🤖 Próximos Passos:
 
-Fique atento para atualizações futuras! Estamos planejando a integração com serviços de IA para tornar sua IntelligentHomePage ainda mais inteligente e personalizada. Novos recursos e melhorias estão a caminho para proporcionar uma experiência única na sua página inicial.
+Fique atento para atualizações futuras! Estou focado em melhorar a responsividade e implementação de recursos novos como parte disso os controle de temas escuro/claro, além de estar planejando a integração com serviços de IA para tornar sua IntelligentHomePage ainda mais inteligente e personalizada. Novos recursos e melhorias estão a caminho para proporcionar uma experiência única na sua página inicial.
